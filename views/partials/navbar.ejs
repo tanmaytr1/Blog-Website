@@ -1,0 +1,25 @@
+<nav class="navbar">
+
+    <div class="title-logo">
+        <a href="/blogs">
+            <h1>Daily Blogs</h1>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <ul>
+            <li><a href="/blogs">Home</a></li>
+            <li><a href="/create">Add new Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <% if (currentUser) { %>
+                <li>
+                    <form action="/logout" method="POST" class="logout-form">
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </li>
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                    <% } %>
+        </ul>
+    </div>
+</nav>

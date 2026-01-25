@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+
+    <body>
+        <%- include('./partials/navbar') %>
+
+            <div class="blogs-box">
+                <div class="blogs-subt">
+                    <h3>Blogs</h3>
+                </div>
+                <% if(blogs.length==0){ %>
+                    <div>no blogs available, create new blog to get started</div>
+                    <% } else {%>
+                        <% blogs.forEach((blog)=>{ %>
+                            <div class="blog">
+                                <a href="<%= `/blogs/${blog._id}` %>">
+                                    <h3>
+                                        <%= blog.title %>
+                                    </h3>
+
+
+                                    <hr>
+
+                                    <h3 class="caption">
+                                        <%= blog.caption %>
+                                    </h3>
+                                </a>
+                            </div>
+                            <% }) %>
+
+            </div>
+            <% } %>
+
+
+    </body>
+
+    </html>

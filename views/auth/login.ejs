@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+    <body>
+        <!-- <%- include('../partials/navbar') %> -->
+        <div class="create-edit-form">
+            <form action="/login" method="POST" class="form">
+                <h2 class="form-title">LOGIN </h2>
+
+                <div class="form-box">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="Password" name="password" id="password"></input><br>
+                    </div>
+                    <button type="submit" class="add-blog-btn">login</button>
+                </div>
+
+            </form>
+            <p>create new Account</p>
+            <a href="/signup"><button>signup</button></a>
+        </div>
+
+    </body>
+
+    </html>

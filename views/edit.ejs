@@ -1,0 +1,31 @@
+<%- include('./partials/header') %>
+
+    <body>
+        <%- include('./partials/navbar') %>
+            <div class="create-edit-form">
+                <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+                    <h2 class="form-title">Edit Blog</h2>
+
+                    <div class="form-box">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" value="<%= blog.title %>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="caption">Caption</label>
+                            <input type="text" name="caption" id="caption" value="<%= blog.caption %>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content">content</label>
+                            <textarea name="content" id="content"><%= blog.content %></textarea>
+                        </div>
+                        <button type="submit" class="add-blog-btn">update blog</button>
+                    </div>
+                </form>
+            </div>
+
+    </body>
+
+    </html>

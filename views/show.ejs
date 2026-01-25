@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+
+    <body>
+        <%- include('./partials/navbar') %>
+
+            <div class="show-div">
+
+                <!-- Title -->
+                <div class="show-title">
+                    <h3>
+                        <%= blog.title %>
+                    </h3>
+                </div>
+
+                <!-- Author + Date -->
+                <div class="show-caption">
+                    <p>
+                        By <strong>
+                            <%= blog.author.username %>
+                        </strong>
+                        • <%= timeAgo(blog.createdAt) %>
+                    </p>
+                </div>
+
+                <!-- Caption -->
+                <div class="show-caption">
+                    <h2>
+                        <%= blog.caption %>
+                    </h2>
+                </div>
+
+                <!-- Content -->
+                <div class="show-content">
+                    <p>
+                        <%= blog.content %>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Owner-only buttons -->
+            <% if (currentUser && blog.author._id.equals(currentUser._id)) { %>
+                <div class="show-btns">
+
+                    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"
+                        onsubmit="return confirm('Delete this blog?');">
+                        <button type="submit" class="show-btn" id="delete-btn">
+                            Delete
+                        </button>
+                    </form>
+
+                    <a href="/blogs/<%= blog._id %>/edit">
+                        <button class="show-btn" id="update-btn">
+                            Update Blog
+                        </button>
+                    </a>
+
+                </div>
+                <% } %>
+
+    </body>
+
+    </html>
