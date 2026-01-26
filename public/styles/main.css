@@ -15,6 +15,23 @@
     --bg-input: #ffffff10;
 }
 
+@font-face {
+    font-family: "StarWarsFont";
+    src: url("Starjedi.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-Distant";
+    src: url("SF\ Distant\ Galaxy.ttf");
+}
+
+@font-face {
+    font-family: "good-timing";
+    src: url("good\ timing\ bd.otf");
+}
+
 /* RESET */
 * {
     margin: 0;
@@ -24,13 +41,15 @@
 
 /* GLOBAL */
 body {
-    font-family: "Roboto";
+    font-family: "SF-Distant";
     background-color: var(--bg-dark);
     color: white;
+    letter-spacing: 2px;
 }
 
 /* NAVBAR */
 .navbar {
+    font-family: "starWarsFont";
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,11 +177,18 @@ body {
     overflow-y: auto;
     border: 2px solid #fff3;
     padding: 1rem;
-    margin-top: 2rem;
+    margin: 2rem 0 2rem;
+
 }
 
 .show-content p {
+    font-family: "good-timing";
     font-size: 1.2rem;
+    word-spacing: 10px;
+    letter-spacing: normal;
+    font-weight: 100;
+    line-height: 1.5;
+
 }
 
 /* BUTTONS */
