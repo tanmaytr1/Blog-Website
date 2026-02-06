@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const connectDB = require("./config/db");
@@ -20,7 +21,7 @@ app.use(methodOverride("_method"));
 
 app.use(
     session({
-        secret: "super-secret-key",
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -29,15 +30,17 @@ app.use(
     })
 );
 
-app.use(async(req,res,next)=>{
-    if(req.session.userId){
-        const user = await User.findById(req.session.userId);
-        res.locals.currentUser = user;
-    }
-    else{
-        res.locals.currentUser= null;
+app.use(async (req, res, next) => {
+  try {
+    if (req.session.userId) {
+      res.locals.currentUser = await User.findById(req.session.userId);
+    } else {
+      res.locals.currentUser = null;
     }
     next();
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.locals.timeAgo = function (date){
@@ -67,7 +70,8 @@ app.use('/',blogRoutes);
 app.use('/',authRoutes);
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT , () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
