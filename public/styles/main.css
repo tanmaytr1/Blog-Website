@@ -22,7 +22,7 @@
     font-style: normal;
 }
 
-/* @font-face {
+@font-face {
     font-family: "SF-Distant";
     src: url("SF\ Distant\ Galaxy.ttf");
 }
@@ -30,7 +30,7 @@
 @font-face {
     font-family: "good-timing";
     src: url("good\ timing\ bd.otf");
-} */
+}
 
 /* RESET */
 * {
@@ -41,7 +41,7 @@
 
 /* GLOBAL */
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "SF-Distant";
     background-color: var(--bg-dark);
     color: white;
     letter-spacing: 2px;
@@ -182,7 +182,7 @@ body {
 }
 
 .show-content p {
-    /* font-family: "good-timing"; */
+    font-family: "good-timing";
     font-size: 1.2rem;
     word-spacing: 10px;
     letter-spacing: normal;
