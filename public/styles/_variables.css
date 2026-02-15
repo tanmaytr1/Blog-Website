@@ -36,7 +36,7 @@
 }
 
 body {
-    font-family: "SF-Distant";
+    /* font-family:; */
     background-color: var(--bg-dark);
     color: white;
     letter-spacing: 2px;
