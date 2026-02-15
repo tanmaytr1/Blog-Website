@@ -17,6 +17,7 @@
                         <button type="submit" class="logout-btn">Logout</button>
                     </form>
                 </li>
+                <li><a href="/profile/<%= currentUser._id %>">profile</a></li>
                 <% } else { %>
                     <li><a href="/login">Login</a></li>
                     <% } %>

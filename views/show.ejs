@@ -15,9 +15,11 @@
                 <!-- Author + Date -->
                 <div class="show-caption">
                     <p>
-                        By <strong>
-                            <%= blog.author.username %>
-                        </strong>
+                        By <a style="text-decoration: underline;" href="/profile/<%= blog.author._id %>">
+                            <strong>
+                                <%= blog.author.username %>
+                            </strong>
+                        </a>
                         • <%= timeAgo(blog.createdAt) %>
                     </p>
                 </div>

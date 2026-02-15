@@ -4,6 +4,7 @@ const Blog = require("../models/Blog");
 const requireAuth = require("../middlewares/requireAuth");
 const requireBlogOwner = require("../middlewares/requireBlogOwner");
 const blogControllers = require("../controllers/blogControllers");
+const User = require("../models/User");
 
 // All Blogs Page
 router.get("/blogs", blogControllers.get_all_blogs);
@@ -13,6 +14,21 @@ router.get("/blogs/:id", blogControllers.get_blog);
 router.get("/about", (req, res) => {
     res.render("about");
 });
+
+router.get("/profile/:id", async (req,res)=>{
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) return res.status(404).render("error", { message: "User not found" });
+
+        // Find all blogs belonging to this user
+        const blogs = await Blog.find({ author: user._id }).sort({ createdAt: -1 });
+
+        res.render("profile", { user, blogs });
+    } catch (err) {
+        console.log(err);
+        res.status(500).render("error", { message: "Error loading profile" });
+    }
+})
 // Create Blog Page
 router.get("/create", requireAuth,(req, res) => {
     res.render("create");

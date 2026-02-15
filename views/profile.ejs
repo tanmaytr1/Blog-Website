@@ -1,0 +1,50 @@
+<%- include('./partials/header') %>
+
+    <body>
+        <%- include('./partials/navbar') %>
+
+            <section class="profile-header">
+                <h1>
+                    <%= user.username %>'s Profile
+                </h1>
+                <p>Email: <%= user.email %>
+                </p>
+
+            </section>
+
+            <hr>
+
+            <section class="user-blogs">
+                <h2>My Posts (<%= blogs.length %>)</h2>
+                <% if(blogs.length> 0) { %>
+                    <div class="blog-list">
+                        <% blogs.forEach(blog=> { %>
+                            <div class="blog-card">
+                                <h3><a href="/blogs/<%= blog._id %>">
+                                        <%= blog.title %>
+                                    </a></h3>
+                                <p>
+                                    <%= blog.caption %>
+                                </p>
+                                <small>Posted <%= timeAgo(blog.createdAt) %></small>
+
+                                <% if(currentUser && currentUser._id.equals(user._id)) { %>
+                                    <div class="actions">
+                                        <a href="/blogs/<%= blog._id %>/edit">Edit</a>
+                                        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"
+                                            style="display:inline">
+                                            <button>Delete</button>
+                                        </form>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <% } else { %>
+                        <p>No blogs posted yet. <a href="/create">Create one?</a></p>
+                        <% } %>
+            </section>
+
+    </body>
+
+    </html>

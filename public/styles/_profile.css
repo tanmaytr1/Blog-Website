@@ -1,0 +1,156 @@
+/* PROFILE HEADER - Identity Card Style */
+.profile-header {
+    width: 90%;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-right: 5px solid var(--accent);
+    /* Sith/Jedi Rank Stripe */
+    backdrop-filter: blur(2px);
+    text-align: left;
+}
+
+.profile-header h1 {
+    font-family: "StarWarsFont", sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 3px rgba(255, 255, 0, 0.3);
+}
+
+.profile-header p {
+    font-family: "good-timing", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+/* SECTION DIVIDER */
+hr {
+    width: 90%;
+    margin: 2rem auto;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+}
+
+/* BLOGS SECTION */
+.user-blogs {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+}
+
+.user-blogs h2 {
+    font-family: "SF-Distant", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    border-left: 3px solid var(--primary);
+    padding-left: 15px;
+}
+
+/* GRID LAYOUT FOR CARDS */
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* INDIVIDUAL BLOG CARDS */
+.blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+.blog-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.blog-card h3 a {
+    font-family: "SF-Distant", sans-serif;
+    color: blanchedalmond;
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    transition: 0.2s;
+}
+
+.blog-card h3 a:hover {
+    color: var(--accent);
+}
+
+.blog-card p {
+    font-family: "Roboto", sans-serif;
+    /* Cleaner for readability */
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 1rem 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-card small {
+    font-family: "good-timing", sans-serif;
+    font-size: 0.7rem;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+/* ACTION BUTTONS (Edit/Delete) */
+.blog-card .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1rem;
+}
+
+.blog-card .actions a,
+.blog-card .actions button {
+    font-family: "SF-Distant", sans-serif;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.blog-card .actions a {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.blog-card .actions a:hover {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.blog-card .actions button {
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    background: transparent;
+}
+
+.blog-card .actions button:hover {
+    background: var(--danger);
+    color: #fff;
+    box-shadow: 0 0 10px var(--danger);
+}
