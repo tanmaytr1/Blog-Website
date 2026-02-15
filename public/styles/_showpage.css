@@ -1,0 +1,91 @@
+.show-div {
+    width: 60%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.show-title {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-bottom: 2px solid #fff3;
+    overflow: scroll;
+}
+
+.show-title::-webkit-scrollbar {
+    display: none;
+}
+
+.show-title h3 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.show-caption {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.503);
+    overflow-wrap: anywhere;
+}
+
+.show-caption h2 {
+    font-weight: 400;
+}
+
+.show-content {
+    width: 100%;
+    min-height: 270px;
+    overflow-y: auto;
+    border: 2px solid #fff3;
+    padding: 1rem;
+    margin: 2rem 0 2rem;
+}
+
+.show-content p {
+    font-family: "good-timing";
+    font-size: 1.2rem;
+    word-spacing: 10px;
+    letter-spacing: normal;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.show-btns {
+    width: 60%;
+    max-width: 800px;
+    margin: 3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-btn {
+    min-width: 130px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 6px;
+}
+
+#delete-btn {
+    background-color: var(--danger);
+    color: white;
+}
+
+#delete-btn:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-2px);
+}
+
+#update-btn {
+    background-color: var(--primary);
+    color: white;
+}
+
+#update-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}

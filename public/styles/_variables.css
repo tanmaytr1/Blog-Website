@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary: #0d6efd;
+    --primary-hover: #1e90ff;
+    --danger: #e53935;
+    --danger-hover: #ff3b30;
+    --accent: yellow;
+    --bg-dark: #1e1e1e;
+    --border-light: #ffffff30;
+    --bg-input: #ffffff10;
+}
+
+@font-face {
+    font-family: "StarWarsFont";
+    src: url("../fonts/Starjedi.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-Distant";
+    src: url("../fonts/SF\ Distant\ Galaxy.ttf");
+}
+
+@font-face {
+    font-family: "good-timing";
+    src: url("../fonts/good\ timing\ bd.otf");
+}
+
+/* RESET & GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SF-Distant";
+    background-color: var(--bg-dark);
+    color: white;
+    letter-spacing: 2px;
+}
