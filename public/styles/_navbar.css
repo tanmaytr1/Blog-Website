@@ -21,12 +21,24 @@
 }
 
 .nav-links ul a:hover {
-    color: var(--accent);
+    color: #fffff0;
+    /* Off-white core for brightness */
+    text-shadow:
+        0 0 5px #fff,
+        /* Bright white inner core */
+        0 0 10px #ffe81f,
+        /* Classic Star Wars Yellow */
+        0 0 20px #ffcc00,
+        /* Deep golden mid-glow */
+        0 0 40px #ffcc00;
+    /* Broad outer aura */
+
+
 }
 
 .title-logo a {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .logout-form {
@@ -48,4 +60,11 @@
 
 .logout-btn:hover {
     color: var(--accent);
+    color: #e0ffe0;
+    text-shadow:
+        0 0 2px #fff,
+        0 0 6px #22ff22,
+        0 0 12px #22ff22,
+        0 0 20px #22ff22;
+
 }

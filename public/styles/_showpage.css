@@ -3,6 +3,8 @@
     margin-left: 50px;
     display: flex;
     flex-direction: column;
+    /* Semi-transparent white */
+
 }
 
 .show-title {
@@ -18,22 +20,44 @@
 }
 
 .show-title h3 {
-    font-size: 3rem;
+    font-family: "good-timing";
+    font-size: 2rem;
     font-weight: 800;
+}
+
+.author-time-div a {
+    text-decoration: none;
+}
+
+.author-time-div a:hover {
+    color: #f0f8ff;
+    /* Soft "Ice Blue" core */
+    text-shadow:
+        0 0 2px #fff,
+        /* White hot center */
+        0 0 5px #2e67ff,
+        /* Main blade color (Sky Blue) */
+        0 0 10px #0000ff,
+        /* Deep Force blue */
+        0 0 15px #0000ff;
+    /* Broad outer aura */
+
 }
 
 .show-caption {
     margin-top: 1rem;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.503);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.847);
     overflow-wrap: anywhere;
 }
 
 .show-caption h2 {
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
 }
 
 .show-content {
+    background-color: rgba(255, 255, 255, 0.05);
     width: 100%;
     min-height: 270px;
     overflow-y: auto;
@@ -43,7 +67,7 @@
 }
 
 .show-content p {
-    font-family: "good-timing";
+    font-family: monospace;
     font-size: 1.2rem;
     word-spacing: 10px;
     letter-spacing: normal;

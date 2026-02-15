@@ -24,6 +24,11 @@
 }
 
 @font-face {
+    font-family: "libre-franklin";
+    src: url("../fonts/LibreFranklin.ttf");
+}
+
+@font-face {
     font-family: "good-timing";
     src: url("../fonts/good\ timing\ bd.otf");
 }
@@ -36,10 +41,29 @@
 }
 
 body {
-    /* font-family:; */
-    background-color: var(--bg-dark);
+    font-family: "SF-Distant";
+    /* background-color: var(--bg-dark); */
     color: white;
+
     letter-spacing: 2px;
+    background-image: url('/images/star-wars-background.png');
+
+    /* Ensure the image covers the entire screen */
+    background-size: cover;
+
+    /* Center the image */
+    background-position: center;
+
+    /* Prevent the image from tiling */
+    background-repeat: no-repeat;
+
+    /* Make the background fixed while scrolling (optional) */
+    background-attachment: fixed;
+
+    /* Ensure the body takes up full height */
+    min-height: 100vh;
+    margin: 0;
+
 }
 
 a,

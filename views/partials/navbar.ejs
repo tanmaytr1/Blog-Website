@@ -10,14 +10,15 @@
         <ul>
             <li><a href="/blogs">Home</a></li>
             <li><a href="/create">Add new Blog</a></li>
-            <li><a href="/about">About</a></li>
+            <!-- <li><a href="/about">About</a></li> -->
             <% if (currentUser) { %>
+                <li><a href="/profile/<%= currentUser._id %>">profile</a></li>
                 <li>
                     <form action="/logout" method="POST" class="logout-form">
                         <button type="submit" class="logout-btn">Logout</button>
                     </form>
                 </li>
-                <li><a href="/profile/<%= currentUser._id %>">profile</a></li>
+
                 <% } else { %>
                     <li><a href="/login">Login</a></li>
                     <% } %>
