@@ -57,23 +57,42 @@ textarea {
 }
 
 .add-blog-btn {
+    /* Layout & Sizing */
     width: 150px;
-    padding: 0.6rem 1rem;
+    height: 45px;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+
+    /* Typography */
+    font-family: "SF-Distant", sans-serif;
     font-size: 1rem;
     font-weight: 800;
-    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    /* Border & Background (Outlined Style) */
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+    /* Sharper corners like the action buttons */
+
+    /* Interaction */
     cursor: pointer;
-    transition: 0.4s ease;
-    background-color: #3b78d7;
-    color: white;
-    border-radius: 6px;
+    transition: 0.3s ease;
 }
 
 .add-blog-btn:hover {
-    background-color: #4c8fff;
-    transform: translateY(-2px);
+    /* Fill with color on hover */
+    background: var(--primary);
+    color: #fff;
 
+    /* Star Wars / Modern Glow Effect */
+    box-shadow: 0 0 10px var(--primary);
+    transform: translateY(-2px);
 }
+
+
 
 /* FORM FOOTER LINKS */
 .form-footer {
