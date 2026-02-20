@@ -3,63 +3,78 @@
     <body>
         <%- include('./partials/navbar') %>
 
-            <div class="show-div">
+            <div class="show-page-wrapper">
 
-                <!-- Title -->
-                <div class="show-title">
-                    <h3>
-                        <%= blog.title %>
-                    </h3>
-                </div>
+                <main class="show-left-column">
+                    <div class="show-div">
+                        <div class="show-title">
+                            <h3>
+                                <%= blog.title %>
+                            </h3>
+                        </div>
 
-                <!-- Author + Date -->
-                <div class="author-time-div">
-                    <p>
-                        By <a href="/profile/<%= blog.author._id %>">
-                            <strong>
-                                <%= blog.author.username %>
-                            </strong>
-                        </a>
-                        • <%= timeAgo(blog.createdAt) %>
-                    </p>
-                </div>
+                        <div class="author-time-div">
+                            <p>
+                                By <a href="/profile/<%= blog.author._id %>">
+                                    <strong>
+                                        <%= blog.author.username %>
+                                    </strong>
+                                </a>
+                                • <%= timeAgo(blog.createdAt) %>
+                            </p>
+                        </div>
 
-                <!-- Caption -->
-                <div class="show-caption">
-                    <h2>
-                        <%= blog.caption %>
-                    </h2>
-                </div>
+                        <div class="show-caption">
+                            <h2>
+                                <%= blog.caption %>
+                            </h2>
+                        </div>
 
-                <!-- Content -->
-                <div class="show-content">
-                    <p>
-                        <%= blog.content %>
-                    </p>
-                </div>
+                        <div class="show-content">
+                            <p>
+                                <%= blog.content %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <% if (currentUser && blog.author._id.equals(currentUser._id)) { %>
+                        <div class="show-btns">
+                            <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"
+                                onsubmit="return confirm('Delete this blog?');">
+                                <button type="submit" class="show-btn" id="delete-btn">Delete</button>
+                            </form>
+                            <a href="/blogs/<%= blog._id %>/edit">
+                                <button class="show-btn" id="update-btn">Update Blog</button>
+                            </a>
+                        </div>
+                        <% } %>
+                </main>
+
+                <aside class="show-right-column">
+                    <section class="comments-section">
+                        <h3>Comm-Channel</h3>
+
+                        <% if (currentUser) { %>
+                            <form action="/blogs/<%= blog._id %>/comments" method="POST" class="comment-form">
+                                <textarea name="body" placeholder="Transmit your thoughts..." required></textarea>
+                                <button type="submit" class="add-blog-btn">Send</button>
+                            </form>
+                            <% } %>
+
+                                <div class="comments-list">
+                                    <% blog.comments.forEach(comment=> { %>
+                                        <div class="comment-item">
+                                            <p>
+                                                <%= comment.body %>
+                                            </p>
+                                            <small>— <%= comment.author.username %></small>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                    </section>
+                </aside>
 
             </div>
-
-            <!-- Owner-only buttons -->
-            <% if (currentUser && blog.author._id.equals(currentUser._id)) { %>
-                <div class="show-btns">
-
-                    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST"
-                        onsubmit="return confirm('Delete this blog?');">
-                        <button type="submit" class="show-btn" id="delete-btn">
-                            Delete
-                        </button>
-                    </form>
-
-                    <a href="/blogs/<%= blog._id %>/edit">
-                        <button class="show-btn" id="update-btn">
-                            Update Blog
-                        </button>
-                    </a>
-
-                </div>
-                <% } %>
-
     </body>
 
     </html>

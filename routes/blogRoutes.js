@@ -65,4 +65,7 @@ router.delete("/blogs/:id",
 );
 
 
+//comment route
+router.post("/blogs/:id/comments", requireAuth, blogControllers.make_comment);
+
 module.exports = router;

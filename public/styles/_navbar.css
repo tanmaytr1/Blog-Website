@@ -59,12 +59,15 @@
 }
 
 .logout-btn:hover {
-    color: var(--accent);
-    color: #e0ffe0;
+    color: #ffe0e0;
+    /* Pale red core */
     text-shadow:
         0 0 2px #fff,
-        0 0 6px #22ff22,
-        0 0 12px #22ff22,
-        0 0 20px #22ff22;
-
+        /* White hot center */
+        0 0 6px #ff2222,
+        /* Main red blade color */
+        0 0 12px #ff2222,
+        /* Inner aura */
+        0 0 20px #ff2222;
+    /* Broad outer glow */
 }

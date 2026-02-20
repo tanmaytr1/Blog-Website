@@ -1,115 +1,193 @@
+/* 1. LAYOUT WRAPPER */
+.show-page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 50px;
+}
+
+/* 2. LEFT COLUMN (Blog Content) */
+.show-left-column {
+    flex: 1;
+    max-width: 65%;
+}
+
 .show-div {
-    width: 60%;
-    margin-left: 50px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    /* Semi-transparent white */
-
 }
 
 .show-title {
     width: 100%;
-    margin: 2rem 0;
+    margin: 0 0 2rem 0;
     padding: 1rem 0;
     border-bottom: 2px solid #fff3;
-    overflow: scroll;
-}
-
-.show-title::-webkit-scrollbar {
-    display: none;
 }
 
 .show-title h3 {
-    font-family: "good-timing";
+    font-family: "good-timing", sans-serif;
+    /* REVERTED */
     font-size: 2rem;
     font-weight: 800;
 }
 
-.author-time-div a {
-    text-decoration: none;
+.author-time-div p {
+    font-family: "SF-Distant", sans-serif;
+    /* REVERTED */
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
-.author-time-div a:hover {
-    color: #f0f8ff;
-    /* Soft "Ice Blue" core */
+.author-time-div p a {
+    transition: 0.3s ease;
+}
+
+.author-time-div p a:hover {
+    color: #fffff0;
+    /* Off-white core for brightness */
     text-shadow:
-        0 0 2px #fff,
-        /* White hot center */
-        0 0 5px #2e67ff,
-        /* Main blade color (Sky Blue) */
-        0 0 10px #0000ff,
-        /* Deep Force blue */
-        0 0 15px #0000ff;
+        0 0 5px #fff,
+        /* Bright white inner core */
+        0 0 10px #ffe81f,
+        /* Classic Star Wars Yellow */
+        0 0 20px #ffcc00,
+        /* Deep golden mid-glow */
+        0 0 40px #ffcc00;
     /* Broad outer aura */
-
-}
-
-.show-caption {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.847);
-    overflow-wrap: anywhere;
 }
 
 .show-caption h2 {
-    font-family: 'Courier New', Courier, monospace;
+    margin-top: 15px;
+    font-family: monospace;
+    /* REVERTED */
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .show-content {
     background-color: rgba(255, 255, 255, 0.05);
     width: 100%;
     min-height: 270px;
-    overflow-y: auto;
     border: 2px solid #fff3;
     padding: 1rem;
-    margin: 2rem 0 2rem;
+    margin: 1.5rem 0;
 }
 
 .show-content p {
     font-family: monospace;
-    font-size: 1.2rem;
-    word-spacing: 10px;
-    letter-spacing: normal;
-    font-weight: 100;
+    /* REVERTED */
+    font-size: 1rem;
+    word-spacing: 5px;
     line-height: 1.5;
+    font-weight: 100;
 }
 
+/* 3. UPDATED BUTTONS (Outlined Glow Style) */
 .show-btns {
-    width: 60%;
-    max-width: 800px;
-    margin: 3rem 3rem;
     display: flex;
-    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .show-btn {
-    min-width: 130px;
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    font-weight: 800;
-    border: none;
+    font-family: "SF-Distant", sans-serif;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: 0.3s ease;
-    border-radius: 6px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: 0.3s;
+    background: transparent;
 }
 
 #delete-btn {
-    background-color: var(--danger);
-    color: white;
+    border: 1px solid var(--danger);
+    color: var(--danger);
 }
 
 #delete-btn:hover {
-    background-color: var(--danger-hover);
+    background: var(--danger);
+    color: #fff;
+    box-shadow: 0 0 10px var(--danger);
     transform: translateY(-2px);
 }
 
 #update-btn {
-    background-color: var(--primary);
-    color: white;
+    border: 1px solid var(--primary);
+    color: var(--primary);
 }
 
 #update-btn:hover {
-    background-color: var(--primary-hover);
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 10px var(--primary);
     transform: translateY(-2px);
+}
+
+/* 4. RIGHT COLUMN (Comments Sidebar) */
+.show-right-column {
+    flex: 0 0 350px;
+    position: sticky;
+    top: 20px;
+}
+
+.comments-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #fff3;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.comments-section h3 {
+    font-family: "SF-Distant", sans-serif;
+    font-size: 0.9rem;
+    color: yellow;
+    /* Matching your Star Wars accent */
+    margin-bottom: 1.5rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff3;
+    color: white;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    outline: none;
+}
+
+.comment-item {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comment-item p {
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.comment-item small {
+    font-family: "SF-Distant", sans-serif;
+    color: yellow;
+    font-size: 0.6rem;
+}
+
+/* Mobile Fix */
+@media (max-width: 1000px) {
+    .show-page-wrapper {
+        flex-direction: column;
+    }
+
+    .show-left-column,
+    .show-right-column {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+    }
 }
